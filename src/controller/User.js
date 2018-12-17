@@ -595,7 +595,7 @@ var UserController = {
             if (!user) return res.status(404).send()
             AccessTokenModel.delToken(user.accessToken)
             user.accessToken = null
-            user.save().then( (newuser) => {return res.status(204).send()}
+            user.save().then( (newuser) => {return res.status(201).send()}
             ).catch( (e) => res.status(500).send(e))
 
         } catch(e) {
